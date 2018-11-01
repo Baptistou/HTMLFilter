@@ -1,0 +1,11 @@
+/* -------------------- Content -------------------- */
+
+.webext-htmlfilter-mode:hover {
+	background-color: red !important;
+	opacity: 0.8 !important;
+}
+
+img.webext-htmlfilter-mode:hover {
+	box-sizing: border-box;
+	border: 1px solid red !important;
+}
