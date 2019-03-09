@@ -58,6 +58,6 @@ port.onMessage.addListener(function(msg){
 	switch(msg.status){
 	case "mode" : setmode(msg);
 	break;
-	case "remove" : target.remove();
+	case "remove" : if(target) target.remove();
 	break;}
 });

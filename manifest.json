@@ -1,14 +1,16 @@
 {
 	"manifest_version": 2,
 	"name": "HTMLFilter",
-	"version": "1.0",
+	"version": "2.0",
 	"author": "Baptiste Thémine",
 	"homepage_url": "https://github.com/Baptistou/HTMLFilter",
-	"description": "Removes undesirable elements from a web page.",
+	"description": "__MSG_@manifest_description__",
+	"default_locale": "en",
 	
 	"permissions": [
 		"<all_urls>",
-		"contextMenus"
+		"contextMenus",
+		"storage"
 	],
 	
 	"icons": {
@@ -31,5 +33,10 @@
 	"browser_action": {
 		"default_title": "HTMLFilter (OFF)",
 		"default_icon": "images/icon-read.png"
+	},
+	
+	"options_ui": {
+		"page": "settings/index.html",
+		"open_in_tab": true
 	}
 }

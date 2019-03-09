@@ -112,9 +112,7 @@ Array.prototype.merge = function(list,callback){
 Array.prototype.intersect = function(list,callback){
 	return this.filter(
 		(callback)?
-		function(val1){
-			return list.some(function(val2){ return callback(val1,val2) });
-		}:
+		function(val1){ return list.some(function(val2){ return callback(val1,val2) }) }:
 		function(val){ return list.contains(val) }
 	);
 };
@@ -123,9 +121,7 @@ Array.prototype.intersect = function(list,callback){
 Array.prototype.subtract = function(list,callback){
 	return this.filter(
 		(callback)?
-		function(val1){
-			return !list.some(function(val2){ return callback(val1,val2) });
-		}:
+		function(val1){ return !list.some(function(val2){ return callback(val1,val2) }) }:
 		function(val){ return !list.contains(val) }
 	);
 };
@@ -197,19 +193,19 @@ CharacterData.prototype.remove = function(){
 	if(this.parentElement) this.parentElement.removeChild(this);
 };
 
-//DOM Level 3 2017 --> support IE 9+
+//DOM Elements 2017 --> support IE 9+
 if(window.HTMLCollection && !HTMLCollection.prototype.forEach)
 HTMLCollection.prototype.forEach = Array.prototype.forEach;
 
-//DOM Level 3 2017 --> support IE 9+
+//DOM Elements 2017 --> support IE 9+
 if(window.NodeList && !NodeList.prototype.forEach)
 NodeList.prototype.forEach = Array.prototype.forEach;
 
-//DOM classList 2017 --> support IE 10+
+//DOM Element.classList 2017 --> support IE 10+
 if(window.DOMTokenList && !DOMTokenList.prototype.forEach)
 DOMTokenList.prototype.forEach = Array.prototype.forEach;
 
-//DOM classList 2017 --> support IE 10+
+//DOM Element.classList 2017 --> support IE 10+
 if(window.DOMTokenList && !DOMTokenList.prototype.replace)
 DOMTokenList.prototype.replace = function(str1,str2){
 	this.forEach(function(val,index,self){ if(val==str1) self[index] = str2; });
@@ -241,14 +237,18 @@ function toggle(element){
 	else element.classList.toggle("hidden");
 }
 
-//Gets DOM template element
-function getTemplateById(id){
-	var template = document.getElementById(id);
-	return document.importNode(template.content || template,true);
+//Returns DOM template content
+//DOM HTMLTemplateElement 2015 --> support IE 8+
+function importtemplate(template){
+	if(!template.content){
+		var fragment = document.createDocumentFragment();
+		template.childNodes.forEach(function(item){ fragment.appendChild(item.cloneNode(true)) });
+		return fragment;}
+	else return document.importNode(template.content,true);
 }
 
 //Imports text file
-//args = {(mandatory) files [array], (optional) accept [array], success [function], error [function]}
+//args = {(mandatory) files [object], (optional) success [function], error [function], accept [array]}
 function importfile(args){
 	Array.prototype.forEach.call(args.files,function(file){
 		var fileext = file.name.substring(file.name.lastIndexOf("."));
@@ -274,7 +274,7 @@ function exportfile(args){
 
 /* -------------------- Classes -------------------- */
 
-//Manages Timeout and Interval
+//Manages Timeout & Interval API
 //args = {(mandatory) func [function], delay [int], (optional) repeat [int|bool], autostart [bool], runonstart [bool]}
 function Timer(args){
 //#	Variables

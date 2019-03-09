@@ -35,7 +35,7 @@ function PortConnect(){
 	};
 	
 	//Sends message to specified ports
-	//args = {(mandatory) port [object|array], (optional) tabid [int], msg [object]} || ports [array]
+	//args = {(mandatory) port [array|string], (optional) msg [object], tabid [int]} || ports [array|string]
 	this.send = function(args){
 		var ports = [].concat(args.port || args);
 		this.data = this.data.filter(function(val){

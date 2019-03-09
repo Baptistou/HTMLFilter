@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <!-- META INFORMATIONS -->
+        <meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>HTMLFilter Settings</title>
+		
+		<!-- FAVICON & CSS -->
+		<link rel="icon" type="image/x-icon" href="/images/icon.ico">
+		<link rel="stylesheet" type="text/css" href="custom.css">
+		<link rel="stylesheet" type="text/css" id="include_theme">
+		
+		<!-- JAVASCRIPT -->
+		<script type="text/javascript" src="/functions.js"></script>
+		<script type="text/javascript" src="/webext.js"></script>
+		<script type="text/javascript" src="script.js"></script>
+    </head>
+	
+    <body>
+		<!-- NAVIGATION BAR -->
+		<nav>
+			<div class="nav-title">
+				<img class="image" id="icon" src="/images/icon64.png">
+				<span class="text">HTMLFilter</span>
+			</div>
+			<ul class="nav-menu">
+				<li><a class="link active" href="#settings" data-i18n>Settings</a></li>
+			</ul>
+			<div class="nav-button">
+				<button id="close" title="Close" data-i18n><span class="icon-close"></span></button>
+			</div>
+		</nav>
+		
+		<!-- CONTENT -->
+		<content>
+			<!-- SETTINGS -->
+			<section id="settings">
+				<!-- ABOUT -->
+				<div class="block">
+					<h2>
+						<i18n>About</i18n>
+						<a class="link ext" href="https://github.com/Baptistou/HTMLFilter/blob/master/README.md" title="More info" data-i18n><span class="icon-help"></span></a>
+					</h2>
+					<p>HTMLFilter <i18n>version</i18n> <span id="version"></span> <i18n>by</i18n> <span id="author"></span>.</p>
+					<ul class="slideshow">
+						<span class="arrow-next" title="Next message" data-i18n></span>
+						<li class="active">
+							<p>
+								<img class="image" src="/images/icon64.png">
+								<span id="description"></span>
+							</p>
+						</li>
+						<li>
+							<p>
+								<img class="image" src="/images/github.png">
+								<i18n data="about_github">HTMLFilter is open source ! You can contribute, add a translation or report any issue on</i18n>
+								<a class="link ext" href="https://github.com/Baptistou/HTMLFilter/blob/master/README.md">GitHub</a>.
+							</p>
+						</li>
+						<li>
+							<p>
+								<img class="image" src="/images/browsers.png">
+								<i18n data="about_thanks">Thank you for downloading HTMLFilter. Available on Firefox, Firefox Android, Chrome and Opera.</i18n>
+							</p>
+						</li>
+					</ul>
+				</div>
+				
+				<!-- OPTIONS -->
+				<div class="block">
+					<h2 data-i18n>Options</h2>
+					<p data-i18n="options_contextmenu">Add HTMLFilter to the browser context menu :</p>
+					<ul class="list-options horizontal">
+						<li>
+							<input type="radio" name="contextmenu" id="contextmenu1" value="true">
+							<label for="contextmenu1" data-i18n>Enable</label>
+						</li>
+						<li>
+							<input type="radio" name="contextmenu" id="contextmenu2" value="false">
+							<label for="contextmenu2" data-i18n>Disable</label>
+						</li>
+					</ul>
+				</div>
+			</section>
+		</content>
+	</body>
+</html>

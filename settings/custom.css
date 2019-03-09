@@ -1,0 +1,340 @@
+/* -------------------- Global definitions -------------------- */
+
+* {
+	box-sizing: border-box;
+	font-family: "Segoe UI";
+	font-size: 100%;
+}
+
+html {
+	font-size: 1px;
+}
+
+@media screen and (orientation: landscape) and (max-width: 1000px) {
+	html { font-size: 0.1vw; }
+}
+
+@media screen and (orientation: portrait) and (max-width: 500px) {
+	html { font-size: 0.2vw; }
+}
+
+body {
+	margin: 0;
+	font-size: 18rem;
+	background-color: white;
+}
+
+h1 {
+	margin: 10rem 0;
+	font-size: 30rem;
+}
+
+h2 {
+	margin: 10rem 0;
+	font-size: 20rem;
+}
+
+p {
+	margin: 10rem 0;
+}
+
+button {
+	color: inherit;
+}
+
+input:disabled+label {
+	color: #888888;
+}
+
+/* DOM HTMLTemplateElement 2015 --> support IE 8+ */
+template {
+	display: none;
+}
+
+.top {
+	vertical-align: top !important;
+}
+
+.middle {
+	vertical-align: middle !important;
+}
+
+.bottom {
+	vertical-align: bottom !important;
+}
+
+.left {
+	text-align: left !important;
+}
+
+.center {
+	text-align: center !important;
+}
+
+.right {
+	text-align: right !important;
+}
+
+.hidden {
+	display: none !important;
+}
+
+@keyframes fadein {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+/* -------------------- Components -------------------- */
+
+.link {
+	color: black;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+img.image {
+	display: inline-block;
+	width: 300rem;
+	max-width: 100%;
+	/* Fix link border issue on IE 10- */
+	border: none;
+}
+
+/* -------------------- Navigation bar -------------------- */
+
+nav {
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 100;
+	height: 50rem;
+	line-height: 50rem;
+	font-size: 24rem;
+	background-color: white;
+	box-shadow: 0 0 5rem rgba(0,0,0,0.175);
+	/* Fix text selection issue on click */
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	/* Fix zoom issue on mobile screen */
+	overflow: hidden;
+}
+
+nav .nav-title {
+	display: block;
+	float: left;
+	border-right: 1px solid #E0E0E0;
+}
+
+nav .nav-title>.image {
+	display: block;
+	float: left;
+	height: 50rem;
+	width: 50rem;
+}
+
+nav .nav-title>.text {
+	display: inline-block;
+	padding: 0 10rem 0 10rem;
+}
+
+nav .link {
+	display: inline-block;
+	padding: 0 10rem 0 10rem;
+	color: #888888;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+nav .link:hover {
+	background-color: #E8E8E8;
+}
+
+nav .link.active {
+	color: black;
+	text-decoration: underline;
+}
+
+nav ul.nav-menu {
+	display: table;
+	float: left;
+	margin: 0;
+	padding: 0;
+	letter-spacing: -0.31em;
+	list-style: none;
+}
+
+nav ul.nav-menu>li {
+	display: inline-block;
+	letter-spacing: normal;
+}
+
+nav .nav-button {
+	display: block;
+	float: right;
+	border-left: 1px solid #E0E0E0;
+}
+
+nav .nav-button>button {
+	display: block;
+	height: 50rem;
+	width: 50rem;
+	border: none;
+	background: none;
+	text-align: center;
+	cursor: pointer;
+}
+
+nav .nav-button>button:hover {
+	background-color: #E8E8E8;
+}
+
+@media screen and (orientation: portrait) and (max-width: 500px) {
+	nav .nav-title { border-right: none; }
+	nav .nav-title>.text { display: none; }
+}
+
+/* -------------------- Content -------------------- */
+
+content {
+	display: block;
+	max-width: 800rem;
+	margin: auto;
+	padding: 50rem 10rem 0 10rem;
+}
+
+@media screen and (min-width: 1600px) {
+	content { max-width: 50%; }
+}
+
+.block {
+	display: block;
+	margin: 20rem 0 20rem 0;
+	border-top: 1px solid #E0E0E0;
+}
+
+.block:first-child {
+	border-top: none;
+}
+
+h2 .link {
+	float: right;
+}
+
+/* -------------------- Settings -------------------- */
+
+ul.slideshow {
+	display: block;
+	position: relative;
+	margin: 10rem 0 10rem 0;
+	padding: 0;
+	list-style: none;
+	background-color: white;
+}
+
+ul.slideshow>li {
+	display: none;
+}
+
+ul.slideshow>li.active {
+	display: list-item;
+	position: relative;
+	padding: 2rem 10rem 2rem 10rem;
+	box-shadow: 0 0 2rem rgba(0,0,0,0.2);
+	animation: fadein 1s;
+}
+
+ul.slideshow>.arrow-next {
+	display: inline-block;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	z-index: 10;
+	line-height: 25rem;
+	width: 25rem;
+	text-align: center;
+	color: white;
+	background-color: black;
+	opacity: 0.2;
+	cursor: pointer;
+}
+
+ul.slideshow>.arrow-next:hover {
+	opacity: 0.4;
+}
+
+ul.slideshow>.arrow-next::before {
+	content: "\276F";
+}
+
+ul.slideshow p {
+	display: block;
+	overflow: hidden;
+}
+
+ul.slideshow img.image {
+	display: block;
+	float: left;
+	height: 50rem;
+	width: 50rem;
+	margin-right: 10rem;
+}
+
+ul.list-options {
+	display: block;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+ul.list-options>li:hover {
+	background-color: #E8E8E8;
+}
+
+ul.list-options.vertical>li {
+	padding: 5rem;
+}
+
+ul.list-options.horizontal>li {
+	display: inline-block;
+	padding: 5rem;
+	margin: 0 5rem 0 5rem;
+}
+
+ul.list-options.fullwidth label {
+	display: block;
+	padding: 5rem;
+}
+
+ul.list-options.fullwidth label:hover {
+	background-color: #E8E8E8;
+}
+
+/* -------------------- Icons -------------------- */
+
+.icon-close::before {
+	content: "\2715";
+}
+
+.icon-help {
+	display: inline-block;
+	height: 25rem;
+	line-height: 25rem;
+	width: 25rem;
+	border-radius: 50%;
+	text-align: center;
+	color: white;
+	background-color: #CCCCCC;
+}
+
+.icon-help:hover {
+	background-color: #BBBBBB;
+	transition: 0.2s;
+}
+
+.icon-help::before {
+	content: "\003F";
+}

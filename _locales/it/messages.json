@@ -1,0 +1,17 @@
+{
+	"@about_github": {"message": "HTMLFilter è open source ! Puoi contribuire, aggiungere una traduzione o segnalare qualsiasi problema su"},
+	"@about_thanks": {"message": "Grazie per aver scaricato HTMLFilter. Disponibile su Firefox, Firefox Android, Chrome ed Opera."},
+	"@contextmenu_remove": {"message": "Rimuovere questo elemento"},
+	"@manifest_description": {"message": "Rimuove gli elementi indesiderati da una pagina web."},
+	"@options_contextmenu": {"message": "Aggiungere HTMLFilter al menu contestuale del browser :"},
+	"About": {"message": "A proposito"},
+	"Close": {"message": "Chiudere"},
+	"Disable": {"message": "Disattivare"},
+	"Enable": {"message": "Attivare"},
+	"More_info": {"message": "Più info"},
+	"Next_message": {"message": "Messaggio successivo"},
+	"Options": {"message": "Opzioni"},
+	"Settings": {"message": "Impostazioni"},
+	"by": {"message": "da"},
+	"version": {"message": "versione"}
+}
