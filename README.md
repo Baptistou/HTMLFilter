@@ -1,6 +1,6 @@
 # HTMLFilter 2.0
 
-**Removes undesirable elements from a web page.**
+:uk: **Removes undesirable elements from a web page.**
 
 HTMLFilter is a simple and lightweight add-on designed with WebExtensions API and compatible with Firefox, Chrome and Opera.
 Right-click an element on the page or click on the addon button to modify the page.
@@ -10,7 +10,7 @@ HTMLFilter cleans your web pages !
 
 --------------------------------------------------------------------------------
 
-**Supprime les éléments indésirables d'une page web.**
+:fr: **Supprime les éléments indésirables d'une page web.**
 
 HTMLFilter est une extension simple et légère développée à l'aide de l'API WebExtensions et compatible avec les navigateurs Firefox, Chrome et Opera.
 Cliquez-droit sur un élément de la page ou cliquez sur le bouton de l'extension pour modifier la page.
